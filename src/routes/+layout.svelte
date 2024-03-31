@@ -14,6 +14,7 @@
         : `?${key}=${value}`;
     }
   });
+
   if (path) {
     goto(path + otherQueryParams);
   }
@@ -46,8 +47,8 @@
 
 <style lang="postcss">
   :global(html) {
-    background-color: theme(colors.black);
-    color: theme(colors.white);
+    background-color: theme(colors.slate.950);
+    color: theme(colors.slate.50);
   }
 
   .overlay {

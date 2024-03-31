@@ -6,7 +6,8 @@
   </head>
   <script>
     const path = window.location.pathname;
-    const isRoot = path === "/";
+    const isRoot =
+      path === "/" || path === "/index.html" || path === "/not_found.html";
 
     // redirect to root with path parameter
     const otherQueryParams = window.location.search;
