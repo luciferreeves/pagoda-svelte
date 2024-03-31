@@ -4,9 +4,18 @@
   import { goto } from "$app/navigation";
 
   // if query params path=? is present, redirect to that path
-  const Path = $page.url.searchParams.get("path");
-  if (Path) {
-    goto(Path);
+  const path = $page.url.searchParams.get("path");
+  let otherQueryParams = "";
+
+  $page.url.searchParams.forEach((value, key) => {
+    if (key !== "path") {
+      otherQueryParams += otherQueryParams
+        ? `&${key}=${value}`
+        : `?${key}=${value}`;
+    }
+  });
+  if (path) {
+    goto(path + otherQueryParams);
   }
 </script>
 
