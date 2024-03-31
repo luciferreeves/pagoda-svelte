@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <script>
+    const path = window.location.pathname;
+    const isRoot = path === "/";
+
+    // redirect to root with path parameter
+    const otherQueryParams = window.location.search;
+    window.location.href =
+      "/" + (isRoot ? "" : `?path=${path}`) + otherQueryParams;
+  </script>
+</html>

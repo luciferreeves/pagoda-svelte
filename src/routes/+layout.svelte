@@ -1,12 +1,19 @@
 <script>
   import "../app.css";
   import { page } from "$app/stores";
+  import { goto } from "$app/navigation";
+
+  // if query params path=? is present, redirect to that path
+  const Path = $page.url.searchParams.get("path");
+  if (Path) {
+    goto(Path);
+  }
 </script>
 
 <div class="overlay h-full m-auto">
-  <div class="banner relative">
+  <div class="banner relative" style="height: 360px">
     <video
-      src="videos/backdrop.mp4"
+      src="https://ik.imagekit.io/pagoda/videos/backdrop.mp4?updatedAt=1711871826766"
       autoplay
       loop
       muted
@@ -17,6 +24,7 @@
       src="images/banner.png"
       alt="banner"
       class="w-92 h-auto relative mx-auto pt-140"
+      style="top: 105px;"
     />
   </div>
   <slot />
@@ -34,10 +42,6 @@
   }
 
   .overlay {
-    max-width: 1024px;
-  }
-
-  .pt-140 {
-    padding-top: 140px;
+    width: 840px;
   }
 </style>
