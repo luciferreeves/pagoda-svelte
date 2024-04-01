@@ -2,6 +2,8 @@
   import "../app.css";
   import { page } from "$app/stores";
   import { goto } from "$app/navigation";
+  import { history } from "../store";
+  import { get } from "svelte/store";
 
   // if query params path=? is present, redirect to that path
   const path = $page.url.searchParams.get("path");
@@ -16,7 +18,13 @@
   });
 
   if (path) {
-    goto(path + otherQueryParams);
+    history.set(path);
+
+    if (get(history) === path) {
+      goto("/_404", { replaceState: true });
+    } else {
+      goto(path + otherQueryParams);
+    }
   }
 </script>
 
