@@ -10,7 +10,25 @@
 
     // redirect to root with path parameter
     const otherQueryParams = window.location.search;
-    window.location.href =
-      "/" + otherQueryParams + (isRoot ? "" : "&path=" + path);
+    let newPath = "/";
+
+    if (otherQueryParams) {
+      newPath += otherQueryParams;
+    }
+
+    if (!isRoot && otherQueryParams) {
+      newPath += "&path=" + path;
+    } else if (!isRoot) {
+      newPath += "?path=" + path;
+    }
+
+    window.location.href = newPath;
+
+    // window.location.href =
+    //   "/"
+    //    +
+    //   (otherQueryParams ? otherQueryParams + "&path=" + path : "?path=" + path)
+    //    +
+    //   (isRoot ? "" : "&path=" + path);
   </script>
 </html>
