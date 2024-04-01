@@ -1,3 +1,4 @@
 import { writable } from 'svelte/store';
 
-export const history = writable('/');
+export const hs = writable('/');
+export const ready = writable(false);

@@ -11,6 +11,6 @@
     // redirect to root with path parameter
     const otherQueryParams = window.location.search;
     window.location.href =
-      "/" + (isRoot ? "" : `?path=${path}`) + otherQueryParams;
+      "/" + otherQueryParams + (isRoot ? "" : "&path=" + path);
   </script>
 </html>
