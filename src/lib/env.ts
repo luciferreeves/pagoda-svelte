@@ -6,8 +6,8 @@ const env_dev = {
 };
 
 const env_prod = {
-    api: 'https://api.example.com',
-    ws: 'wss://api.example.com',
+    api: '',
+    ws: '',
 };
 
 export const env = dev ? env_dev : env_prod;
