@@ -5,6 +5,8 @@
   import { ready, hs } from "../store";
   import { get } from "svelte/store";
   import { onMount } from "svelte";
+  import Header from "../components/header.svelte";
+  import Sidebar from "../components/sidebar.svelte";
 
   onMount(() => {
     // if query params path=? is present, redirect to that path
@@ -42,24 +44,16 @@
 </script>
 
 {#if $ready}
-  <div class="overlay h-full m-auto">
-    <div class="banner relative" style="height: 360px">
-      <video
-        src="https://ik.imagekit.io/pagoda/videos/backdrop.mp4?updatedAt=1711871826766"
-        autoplay
-        loop
-        muted
-        playsinline
-        class="w-full h-auto absolute"
-      />
-      <img
-        src="images/banner.png"
-        alt="banner"
-        class="w-92 h-auto relative mx-auto pt-140"
-        style="top: 105px;"
-      />
+  <div class="overlay h-full m-auto bg-black bg-opacity-50 text-sm">
+    <Header />
+    <div class="flex gap-2 mt-4">
+      <div class="w-1/4 h-screen overflow-y-auto">
+        <Sidebar />
+      </div>
+      <div class="w-3/4 h-screen overflow-y-auto">
+        <slot />
+      </div>
     </div>
-    <slot />
   </div>
 {/if}
 
@@ -70,7 +64,7 @@
 
 <style lang="postcss">
   :global(html) {
-    background-color: theme(colors.slate.950);
+    background-color: theme(colors.black);
     color: theme(colors.slate.50);
   }
 

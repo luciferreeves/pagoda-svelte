@@ -5,8 +5,30 @@
     <link rel="icon" href="%sveltekit.assets%/icons/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     %sveltekit.head%
+    <style>
+      #bg-video {
+        width: 100vw;
+        height: 100vh;
+        object-fit: contain;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+      }
+    </style>
   </head>
   <body data-sveltekit-preload-data="hover">
+    <video
+      id="bg-video"
+      muted
+      autoplay
+      playsinline
+      loop
+      preload="auto"
+      src="https://ik.imagekit.io/pagoda/videos/background.mp4?updatedAt=1712069286558"
+    ></video>
     <div style="display: contents">%sveltekit.body%</div>
   </body>
 </html>
