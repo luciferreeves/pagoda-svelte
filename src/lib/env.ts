@@ -6,8 +6,8 @@ const env_dev = {
 };
 
 const env_prod = {
-    api: 'https://shi.foo',
-    ws: 'wss://shi.foo',
+    api: 'https://pagoda.shi.foo',
+    ws: 'wss://pagoda.shi.foo',
 };
 
 export const env = dev ? env_dev : env_prod;
