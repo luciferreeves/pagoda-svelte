@@ -17,7 +17,7 @@
     }
   });
 
-  history.pushState({}, null, path + otherQueryParams);
+  history.pushState({}, "", path + otherQueryParams);
 </script>
 
 <div class="border-white p-4 border-solid text-center border-2 rounded">
@@ -25,5 +25,8 @@
   <p class="text-sm">
     The page you are looking for does not exist. Please check the URL and try
     again.
+  </p>
+  <p>
+    Click <a href="/">here</a> to go back to the home page.
   </p>
 </div>
