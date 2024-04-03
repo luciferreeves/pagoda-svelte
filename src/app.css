@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.libre-barcode {
+  font-family: "Libre Barcode 128 Text", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.saira {
+  font-family: "Saira Extra Condensed", sans-serif;
+}
+
+.banner {
+  background-image: url("/images/backdrop.webp");
+  background-size: contain;
+  background-repeat: repeat-x;
+  min-width: 840px;
+}
+
+.overlay {
+  width: 840px;
+}

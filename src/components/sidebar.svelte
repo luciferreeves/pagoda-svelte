@@ -21,24 +21,55 @@
   };
 </script>
 
+<div class="navigation-header libre-barcode text-xl gap-2 flex flex-row">
+  <div class="bg-pagodagreen rounded-tl-2xl rounded-bl-2xl px-4"></div>
+  <div class="libre-barcode">NAVIGATION</div>
+  <div class="bg-pagodapink flex-grow rounded-tr-2xl"></div>
+</div>
+<div
+  class="navigation-nav saira text-l uppercase font-bold border-r-8 border-b-2 ml-8 border-solid border-pagodapink bg-pagodapink rounded-br"
+>
+  <div
+    class="nav-item text-right text-pagodagreen group hover:text-pagodagreen-shine bg-black rounded-tr-xl py-1 flex flex-row gap-2 justify-end"
+  >
+    <a href="/" class="block group-hover:text-pagodagreen-shine">Home</a>
+    <span class="text-black group-hover:text-pagodapink-shine"> ▎</span>
+  </div>
+  <div
+    class="nav-item text-right text-pagodagreen group hover:text-pagodagreen-shine bg-black py-1 flex flex-row gap-2 justify-end"
+  >
+    <a href="/" class="block group-hover:text-pagodagreen-shine">Guilds</a>
+    <span class="text-black group-hover:text-pagodapink-shine"> ▎</span>
+  </div>
+  <div
+    class="nav-item text-right text-pagodagreen group hover:text-pagodagreen-shine bg-black py-1 flex flex-row gap-2 justify-end"
+  >
+    <a href="/" class="block group-hover:text-pagodagreen-shine">Shrines</a>
+    <span class="text-black group-hover:text-pagodapink-shine"> ▎</span>
+  </div>
+  <div
+    class="nav-item text-right text-pagodagreen group hover:text-pagodagreen-shine bg-black py-1 flex flex-row gap-2 justify-end"
+  >
+    <a href="/" class="block group-hover:text-pagodagreen-shine">Marketplace</a>
+    <span class="text-black group-hover:text-pagodapink-shine"> ▎</span>
+  </div>
+  <div
+    class="nav-item text-right text-pagodagreen group hover:text-pagodagreen-shine bg-black py-1 flex flex-row gap-2 justify-end"
+  >
+    <a href="/" class="block group-hover:text-pagodagreen-shine"
+      >Found a Guild</a
+    >
+    <span class="text-black group-hover:text-pagodapink-shine"> ▎</span>
+  </div>
+</div>
+
 {#if $currentLoggedInUser}
   <p>You are logged in as {$currentLoggedInUser.username}</p>
   <button on:click={logout}>Logout</button>
 {:else}
-  <div
-    class="bg-gradient-to-b from-amber-800 to-amber-950 text-center rounded-tl-md rounded-tr-md p-1"
-  >
-    <p class="font-bold">Login</p>
-  </div>
-  <div
-    class="rounded-br-md rounded-bl-md bg-white p-2 text-black bg-opacity-50"
-  >
-    <form on:submit={login}>
-      <label for="username">Username:</label>
-      <input type="text" id="username" name="username" required />
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required />
-      <button type="submit">Login</button>
-    </form>
+  <div class="login-form-header libre-barcode text-xl flex flex-row gap-2 mt-4">
+    <div class="bg-pagodagreen rounded-tl-2xl rounded-bl-2xl px-4"></div>
+    <div class="libre-barcode">LOGIN</div>
+    <div class="bg-pagodapurple flex-grow"></div>
   </div>
 {/if}

@@ -44,8 +44,8 @@
 </script>
 
 {#if $ready}
+  <Header />
   <div class="overlay h-full m-auto text-sm">
-    <Header />
     <div class="flex gap-2 mt-4">
       <div class="w-1/4 h-screen overflow-y-auto">
         <Sidebar />
@@ -60,15 +60,17 @@
 <svelte:head>
   <title>Pagoda — {$page.data.meta.title}</title>
   <meta name="description" content={$page.data.meta.description} />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="true" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Libre+Barcode+128+Text&family=Saira+Extra+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
 </svelte:head>
 
 <style lang="postcss">
   :global(html) {
     background-color: theme(colors.black);
-    color: theme(colors.slate.50);
-  }
-
-  .overlay {
-    width: 840px;
+    color: #faebfb;
   }
 </style>
