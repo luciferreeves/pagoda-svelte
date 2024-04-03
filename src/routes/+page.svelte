@@ -15,6 +15,6 @@
     marketplace (No Real Money Trading involved) where you can acquire new assets
     for your site, such as blinkies, buttons, backgrounds, templates, and more. At
     the same time, artists can sell their creations to other users. The possibilities
-    are endless!
+    are endless!!!
   </p>
 </div>
