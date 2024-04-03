@@ -1,5 +1,5 @@
 import { env } from "$lib/env";
-import type { User } from "./types";
+import type { Session, User } from "./types";
 
 export const loginUser = async (form: HTMLFormElement): Promise<User | null> => {
     const res = await fetch(`${env.api}/users/login`, {
@@ -9,8 +9,10 @@ export const loginUser = async (form: HTMLFormElement): Promise<User | null> => 
     });
 
     if (res.ok) {
-        const user: User = await res.json();
-        return user;
+        const session: Session = await res.json();
+        localStorage.setItem('session', session.key);
+
+        return session.user;
     } else {
         return null;
     }

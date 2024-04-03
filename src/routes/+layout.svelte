@@ -44,7 +44,7 @@
 </script>
 
 {#if $ready}
-  <div class="overlay h-full m-auto bg-black bg-opacity-50 text-sm">
+  <div class="overlay h-full m-auto text-sm">
     <Header />
     <div class="flex gap-2 mt-4">
       <div class="w-1/4 h-screen overflow-y-auto">

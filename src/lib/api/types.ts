@@ -5,3 +5,8 @@ export type User = {
     DeletedAt: string;
     username: string;
 }
+
+export type Session = {
+    key: string;
+    user: User;
+}

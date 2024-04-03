@@ -5,4 +5,6 @@ export const logoutUser = async (): Promise<void> => {
         method: 'POST',
         credentials: 'include',
     });
+
+    localStorage.removeItem('session');
 }

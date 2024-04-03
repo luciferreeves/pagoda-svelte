@@ -30,7 +30,9 @@
   >
     <p class="font-bold">Login</p>
   </div>
-  <div class="rounded-br-md rounded-bl-md bg-yellow-100 p-2 text-black">
+  <div
+    class="rounded-br-md rounded-bl-md bg-white p-2 text-black bg-opacity-50"
+  >
     <form on:submit={login}>
       <label for="username">Username:</label>
       <input type="text" id="username" name="username" required />
