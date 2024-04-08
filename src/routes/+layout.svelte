@@ -2,7 +2,7 @@
   import "../app.css";
   import { page } from "$app/stores";
   import { goto } from "$app/navigation";
-  import { ready, hs } from "../store";
+  import { ready, notFound } from "../store";
   import { get } from "svelte/store";
   import { onMount } from "svelte";
   import Header from "../components/header.svelte";
@@ -25,17 +25,13 @@
     });
 
     if (path) {
-      hs.set(path);
-
-      if (get(hs) === path) {
-        if (path !== "/_404") {
-          goto(
-            `/_404${otherQueryParams}${otherQueryParams ? "&" : "?"}referrer=${path}`
-          );
-        } else {
-          goto("/_404" + otherQueryParams);
-        }
+      const nf = get(notFound);
+      if (nf) {
+        goto(
+          `/_404${otherQueryParams}${otherQueryParams ? "&" : "?"}referrer=${path}`
+        );
       } else {
+        notFound.set(true);
         goto(path + otherQueryParams);
       }
     } else {
