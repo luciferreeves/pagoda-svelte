@@ -5,6 +5,7 @@ export default {
     extend: {
       colors: {
         'pagodapurple': '#8853e7',
+        'pagodapurple-shine': '#d4c5ff',
         'pagodagreen': '#91d027',
         'pagodagreen-shine': '#cff294',
         'pagodapink': '#e42b8f',

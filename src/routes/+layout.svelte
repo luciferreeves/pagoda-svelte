@@ -6,7 +6,8 @@
   import { get } from "svelte/store";
   import { onMount } from "svelte";
   import Header from "../components/header.svelte";
-  import Sidebar from "../components/sidebar.svelte";
+  import LeftSidebar from "../components/left_sidebar.svelte";
+  import RightSidebar from "../components/right_sidebar.svelte";
 
   onMount(() => {
     // if query params path=? is present, redirect to that path
@@ -45,14 +46,31 @@
 
 {#if $ready}
   <Header />
-  <div class="overlay h-full m-auto text-sm">
-    <div class="flex gap-2 mt-4">
-      <div class="w-1/4 h-screen overflow-y-auto">
-        <Sidebar />
+  <div class="overlay m-auto text-sm mt-4">
+    <div class="flex gap-4">
+      <div class="w-1/6">
+        <LeftSidebar />
       </div>
-      <div class="w-3/4 h-screen overflow-y-auto">
+      <div class="w-2/3">
         <slot />
       </div>
+      <div class="w-1/6">
+        <RightSidebar />
+      </div>
+    </div>
+    <div class="footer text-center mt-8">
+      <hr />
+      <p class="text-xs py-4">
+        &copy; {new Date().getFullYear()} Neocities Pagoda. All rights reserved.
+        Brought to you by
+        <a
+          href="https://shi.foo"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-pagodapurple-shine hover:text-pagodapink-shine hover:decoration-dotted hover:underline"
+          >shi.foo</a
+        >.
+      </p>
     </div>
   </div>
 {/if}
@@ -63,7 +81,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="true" />
   <link
-    href="https://fonts.googleapis.com/css2?family=Libre+Barcode+128+Text&family=Saira+Extra+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@100;200;300;400;500;600;700;800;900&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
     rel="stylesheet"
   />
 </svelte:head>
@@ -71,6 +89,7 @@
 <style lang="postcss">
   :global(html) {
     background-color: theme(colors.black);
-    color: #faebfb;
+    color: theme(colors.white);
+    font-family: "IBM Plex Sans", sans-serif;
   }
 </style>
